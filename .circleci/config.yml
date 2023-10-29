@@ -1,66 +1,16 @@
 version: 2.1
-executors:
-  python-executor:
-    docker:
-      - image: circleci/python:3.11  # Use the same Python version as your Dockerfile
-    working_directory: /app
-
 jobs:
   build:
-    executor: python-executor
+    docker:
+      - image: python:3.11  # You can choose the Python version you need
     steps:
       - checkout
-
       - run:
-          name: Install Docker
+          name: Install Dependencies
           command: |
-            sudo apt-get update
-            sudo apt-get install -y docker.io
-            sudo service docker start
-
-      - setup_remote_docker:
-          docker_layer_caching: true
-
-      - run:
-          name: Build Docker Image
-          command: |
-            docker build -t your-app-name .
-
-  test:
-    executor: python-executor
-    steps:
-      - checkout
-
-      - run:
-          name: Run Docker Compose
-          command: |
-            docker-compose up -d
-
+            pip install poetry
+            poetry install
       - run:
           name: Run Tests
           command: |
-            docker-compose exec app poetry run pytest  # Adjust this command for your testing setup
-
-#  deploy:
-#    executor: python-executor
-#    steps:
-#      - checkout
-#
-#      - run:
-#          name: Deploy to Production
-#          command: |
-            # Add your deployment steps here
-
-workflows:
-  version: 2
-  build-and-test:
-    jobs:
-      - build
-      - test:
-          requires:
-            - build  # Ensure the 'build' job completes before running 'test'
-#  deploy:
-#    jobs:
-#      - deploy:
-#          requires:
-#            - test  # Ensure the 'test' job completes before deploying
+            poetry run pytest

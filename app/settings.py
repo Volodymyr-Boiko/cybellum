@@ -4,12 +4,12 @@ from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
-    postgres_password: str
-    postgres_db: str
-    postgres_user: str
-    postgres_host: str
-    postgres_port: int
-    secret_key: str
+    postgres_password: str = "postgres"
+    postgres_db: str = "postgres"
+    postgres_user: str = "postgres"
+    postgres_host: str = "postgres"
+    postgres_port: int = 5432
+    secret_key: str = "secret_key"
 
     def db_url(self) -> str:
         return (

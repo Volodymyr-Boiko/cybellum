@@ -2,6 +2,7 @@ version: '3'
 
 services:
   app:
+    container_name: app
     build: .
     ports:
       - "5001:5001"
@@ -19,6 +20,7 @@ services:
       - SECRET_KEY=secret_key
 
   db:
+    container_name: db
     image: postgres
     environment:
       - POSTGRES_PASSWORD=postgres
