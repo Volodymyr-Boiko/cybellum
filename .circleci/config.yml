@@ -34,7 +34,7 @@ jobs:
       - run:
           name: Compliance Check
           command: |
-            run: echo "This is pipeline ID << pipeline.id >>"
+            echo "This is pipeline ID << pipeline.id >>"
 
 workflows:
   build-test:
