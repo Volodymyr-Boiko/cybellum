@@ -13,6 +13,10 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Get Pipeline Id
+          command: |
+            echo "This is pipeline ID << pipeline.id >>"
+      - run:
           name: Install Dependencies
           command: |
             pip install poetry
