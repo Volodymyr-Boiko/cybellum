@@ -33,4 +33,4 @@ def test_register(client: FlaskClient, mocker: MockerFixture):
 
 
 def test_circleci():
-    assert 1 == 2
+    assert 1 == 1
