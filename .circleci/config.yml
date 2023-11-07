@@ -28,8 +28,8 @@ jobs:
             export SECRET_KEY=$SECRET_KEY
             poetry run pytest
   compliance-check:
-#    docker:
-#      - image: python:3.11
+    docker:
+      - image: python:3.11
     steps:
       - run:
           name: Compliance Check
