@@ -3,13 +3,6 @@ jobs:
   build:
     docker:
       - image: python:3.11  # You can choose the Python version you need
-    environment:
-      POSTGRES_PASSWORD: "postgres"
-      POSTGRES_DB: "postgres"
-      POSTGRES_USER: "postgres"
-      POSTGRES_HOST: "db"
-      POSTGRES_PORT: 5432
-      SECRET_KEY: "secret_key"
     steps:
       - checkout
       - run:
@@ -17,13 +10,26 @@ jobs:
           command: |
             pip install poetry
             poetry install
-      - run:
-          name: Run Tests
-          command: |
-            export POSTGRES_PASSWORD=$POSTGRES_PASSWORD
-            export POSTGRES_DB=$POSTGRES_DB
-            export POSTGRES_USER=$POSTGRES_USER
-            export POSTGRES_HOST=$POSTGRES_HOST
-            export POSTGRES_PORT=$POSTGRES_PORT
-            export SECRET_KEY=$SECRET_KEY
-            poetry run pytest
+  test:
+    docker:
+      - image: python:3.11  # You can choose the Python version you need
+      environment:
+        POSTGRES_PASSWORD: "postgres"
+        POSTGRES_DB: "postgres"
+        POSTGRES_USER: "postgres"
+        POSTGRES_HOST: "db"
+        POSTGRES_PORT: 5432
+        SECRET_KEY: "secret_key"
+      steps:
+        - checkout
+        - run:
+            name: Run Tests
+            command: |
+              export POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+              export POSTGRES_DB=$POSTGRES_DB
+              export POSTGRES_USER=$POSTGRES_USER
+              export POSTGRES_HOST=$POSTGRES_HOST
+              export POSTGRES_PORT=$POSTGRES_PORT
+              export SECRET_KEY=$SECRET_KEY
+              poetry run pytest
+
