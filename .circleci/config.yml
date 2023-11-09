@@ -4,7 +4,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: python:3.11  # You can choose the Python version you need.
+      - image: python:3.11  # You can choose the Python version you need
     environment:
       POSTGRES_PASSWORD: "postgres"
       POSTGRES_DB: "postgres"
@@ -39,21 +39,3 @@ jobs:
     steps:
       - checkout
       - sonarcloud/scan
-  compliance-check:
-    docker:
-      - image: python:3.11
-    steps:
-      - run:
-          name: Compliance Check
-          command: |
-            echo "This is pipeline ID << pipeline.id >>"
-
-workflows:
-  build-test:
-    jobs:
-      - build
-      - compliance-check
-      - install-build-test
-  compliance:
-    jobs:
-      - compliance-check
