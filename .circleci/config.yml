@@ -33,10 +33,27 @@ jobs:
             export POSTGRES_PORT=$POSTGRES_PORT
             export SECRET_KEY=$SECRET_KEY
             poetry run pytest
-
   install-build-test:
     docker:
       - image: cimg/python:3.11.5-node
     steps:
       - checkout
       - sonarcloud/scan
+  compliance-check:
+    docker:
+      - image: python:3.11
+    steps:
+      - run:
+          name: Compliance Check
+          command: |
+            echo "This is pipeline ID << pipeline.id >>"
+
+workflows:
+  build-test:
+    jobs:
+      - build
+      - compliance-check
+      - install-build-test
+  compliance:
+    jobs:
+      - compliance-check
