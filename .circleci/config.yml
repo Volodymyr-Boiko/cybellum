@@ -1,6 +1,6 @@
 version: 2.1
-#orbs:
-#  sonarcloud: extendaretail/sonarcloud@0.0.2
+orbs:
+  sonarcloud: extendaretail/sonarcloud@0.0.2
 jobs:
   build:
     docker:
@@ -53,7 +53,7 @@ workflows:
     jobs:
       - build
       - compliance-check
-#      - install-build-test
+      - install-build-test
   compliance:
     jobs:
       - compliance-check
