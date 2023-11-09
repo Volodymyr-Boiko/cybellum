@@ -4,7 +4,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: python:3.11  # You can choose the Python version you need
+      - image: python:3.11  # You can choose the Python version you need.
     environment:
       POSTGRES_PASSWORD: "postgres"
       POSTGRES_DB: "postgres"
