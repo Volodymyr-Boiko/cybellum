@@ -1,4 +1,6 @@
 version: 2.1
+orbs:
+  sonarcloud: extendaretail/sonarcloud@0.0.2
 jobs:
   build:
     docker:
@@ -31,3 +33,10 @@ jobs:
             export POSTGRES_PORT=$POSTGRES_PORT
             export SECRET_KEY=$SECRET_KEY
             poetry run pytest
+
+  install-build-test:
+    docker:
+      - image: cimg/python:3.11.5-node
+    steps:
+      - checkout
+      - sonarcloud/scan
