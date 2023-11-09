@@ -46,6 +46,7 @@ jobs:
       - run:
           name: Compliance Check
           command: |
+            ls
             echo "This is pipeline ID << pipeline.id >>"
 
 workflows:
