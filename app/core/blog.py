@@ -31,7 +31,7 @@ def core_create_post(blog_post_data: BlogPostDataCreate):
     user = session.query(User).filter(User.id == blog_post_data.author_id).first()
     if not user:
         session.close()
-        return jsonify({"error": "Author does not exist"}), 404
+        return jsonify({"error": "Author does not exist."}), 404
 
     post = Post(
         title=blog_post_data.title,
