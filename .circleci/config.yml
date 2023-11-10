@@ -55,7 +55,9 @@ workflows:
     jobs:
       - build
       - compliance-check
+           context: Testing-Env-Vars
 #      - install-build-test
+
   compliance:
     jobs:
       - compliance-check
