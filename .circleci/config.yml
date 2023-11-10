@@ -50,6 +50,7 @@ jobs:
             echo ${CIRCLE_BRANCH}
             echo ${CIRCLE_PULL_REQUESTS}
             echo ${CIRCLE_PULL_REQUEST}
+            echo "!!!"
 
 workflows:
   build-test:
