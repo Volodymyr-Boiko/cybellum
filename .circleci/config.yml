@@ -46,8 +46,8 @@ jobs:
       - run:
           name: Compliance Check
           command: |
-            ls
             echo "This is pipeline ID << pipeline.id >>"
+            echo ${CIRCLE_PULL_REQUEST##*/}
 
 workflows:
   build-test:
