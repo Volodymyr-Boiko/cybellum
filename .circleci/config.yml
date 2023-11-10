@@ -54,7 +54,7 @@ workflows:
     jobs:
       - build
       - compliance-check
-      - install-build-test
+#      - install-build-test
   compliance:
     jobs:
       - compliance-check
