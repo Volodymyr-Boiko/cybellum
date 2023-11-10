@@ -48,14 +48,13 @@ jobs:
           command: |
             echo "This is pipeline ID << pipeline.id >>"
             echo ${CIRCLE_BRANCH}
-            echo ${CIRCLE_PULL_REQUEST##*/}
+            echo ${CIRCLE_PULL_REQUEST}
 
 workflows:
   build-test:
     jobs:
       - build
       - compliance-check
-           context: Testing-Env-Vars
 #      - install-build-test
 
   compliance:
