@@ -13,7 +13,7 @@ user_management = Blueprint("user_management", __name__)
 
 @user_management.route("/get_user/<user_id>")
 def hello(user_id):
-    return f"Hello, World! {user_id}"
+    return f"Hello, World!! {user_id}"
 
 
 @user_management.route("/register", methods=["POST"])
