@@ -18,6 +18,7 @@ jobs:
           name: Get Pipeline Id
           command: |
             echo "This is pipeline ID << pipeline.id >>"
+            echo "Commit sha << pipeline.trigger_parameters.github_app.commit_sha>>"
       - run:
           name: Install Dependencies
           command: |
