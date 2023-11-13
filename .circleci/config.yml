@@ -39,7 +39,7 @@ jobs:
       - run:
           name: Get PR Info
           command: |
-            echo $CIRCLE_REPOSITORY_URL
+            echo "pipeline.trigger_parameters.github_app.repo_url"
 
 workflows:
   build-test:
