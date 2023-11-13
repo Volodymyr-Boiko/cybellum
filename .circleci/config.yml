@@ -36,6 +36,11 @@ jobs:
           command: |
             echo "This is pipeline ID << pipeline.id >>"
 
+      - run:
+          name: Get PR Info
+          command: |
+            echo "This is PR ID << $CIRCLE_PR_NUMBER >>"
+
 workflows:
   build-test:
     jobs:
