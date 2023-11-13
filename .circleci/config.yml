@@ -39,7 +39,7 @@ jobs:
       - run:
           name: Get PR Info
           command: |
-            echo "This is pipeline ID << pipeline.git.revision >>"
+            echo "This is pipeline ID << ${CIRCLE_PULL_REQUEST##*/} >>"
 
 workflows:
   build-test:
