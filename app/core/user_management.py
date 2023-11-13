@@ -23,7 +23,7 @@ def core_user_register(user_register_data: UserRegister):
         or not user_register_data.email
         or not user_register_data.password_hash
     ):
-        return jsonify({"error": "Invalid input data"}), 400
+        return jsonify({"error": "Invalid input data."}), 400
     try:
         new_user = User(
             username=user_register_data.username,
