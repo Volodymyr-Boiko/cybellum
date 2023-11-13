@@ -39,7 +39,7 @@ jobs:
       - run:
           name: Get PR Info
           command: |
-            echo "CIRCLE_PR_NUMBER $CIRCLE_PR_NUMBER"
+            echo "CIRCLE_PULL_REQUEST $CIRCLE_PULL_REQUEST"
 
 workflows:
   build-test:
