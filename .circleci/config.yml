@@ -39,7 +39,7 @@ jobs:
       - run:
           name: Get PR Info
           command: |
-            echo "pipeline.trigger_parameters.github_app.repo_url"
+            echo "This is pipeline ID << pipeline.trigger_parameters.github_app.repo_url >>"
 
 workflows:
   build-test:
