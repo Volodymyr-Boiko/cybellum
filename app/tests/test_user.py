@@ -32,5 +32,6 @@ def test_register(client: FlaskClient, mocker: MockerFixture):
     assert response.status_code == 200
 
 
-def test_bla():
+def test_circleci():
     assert 1 == 1
+

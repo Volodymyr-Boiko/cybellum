@@ -3,7 +3,6 @@ from flask import Flask
 from app.api.blog_post_management.blog import blog_post_management
 from app.api.comment_management.comment import comment_management
 from app.api.user_management.user_management import user_management
-
 # from settings import get_settings
 from app.settings import get_settings
 
