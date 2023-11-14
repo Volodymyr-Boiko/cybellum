@@ -4,4 +4,4 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"  # or your preferred interval
-    target-branch: "dependabot"
+    target-branch: "origin/dependabot"
