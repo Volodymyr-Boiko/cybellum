@@ -99,24 +99,6 @@ python-versions = ">=3.7"
 test = ["pytest (>=6)"]
 
 [[package]]
-name = "flask"
-version = "2.0.0"
-description = "A simple framework for building complex web applications."
-category = "main"
-optional = false
-python-versions = ">=3.6"
-
-[package.dependencies]
-click = ">=7.1.2"
-itsdangerous = ">=2.0"
-Jinja2 = ">=3.0"
-Werkzeug = ">=2.0"
-
-[package.extras]
-async = ["asgiref (>=3.2)"]
-dotenv = ["python-dotenv"]
-
-[[package]]
 name = "greenlet"
 version = "3.0.0"
 description = "Lightweight in-process concurrent programming"
@@ -149,28 +131,6 @@ colors = ["colorama (>=0.4.3)"]
 requirements-deprecated-finder = ["pip-api", "pipreqs"]
 pipfile-deprecated-finder = ["pip-shims (>=0.5.2)", "pipreqs", "requirementslib"]
 plugins = ["setuptools"]
-
-[[package]]
-name = "itsdangerous"
-version = "2.1.2"
-description = "Safely pass data to untrusted environments and back."
-category = "main"
-optional = false
-python-versions = ">=3.7"
-
-[[package]]
-name = "jinja2"
-version = "3.1.2"
-description = "A very fast and expressive template engine."
-category = "main"
-optional = false
-python-versions = ">=3.7"
-
-[package.dependencies]
-MarkupSafe = ">=2.0"
-
-[package.extras]
-i18n = ["Babel (>=2.7)"]
 
 [[package]]
 name = "mako"
@@ -450,24 +410,10 @@ category = "main"
 optional = false
 python-versions = ">=3.8"
 
-[[package]]
-name = "werkzeug"
-version = "3.0.1"
-description = "The comprehensive WSGI web application library."
-category = "main"
-optional = false
-python-versions = ">=3.8"
-
-[package.dependencies]
-MarkupSafe = ">=2.1.1"
-
-[package.extras]
-watchdog = ["watchdog (>=2.3)"]
-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "7ecf3451c56b9927d7224bef3d5587e89608a8cbfdfec76bb6495ccde1267628"
+content-hash = "579ce361cb23119c5f2062d0e170f3d0cfb8b7f8fdde3d959d4b8369abb9e481"
 
 [metadata.files]
 alembic = []
@@ -478,12 +424,9 @@ click = []
 colorama = []
 dill = []
 exceptiongroup = []
-flask = []
 greenlet = []
 iniconfig = []
 isort = []
-itsdangerous = []
-jinja2 = []
 mako = []
 markupsafe = []
 mccabe = []
@@ -507,4 +450,3 @@ sqlalchemy = []
 tomli = []
 tomlkit = []
 typing-extensions = []
-werkzeug = []
