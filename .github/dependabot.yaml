@@ -2,4 +2,6 @@ version: 2
 updates:
   - package-ecosystem: "pip"
     directory: "/"
+    schedule:
+      interval: "weekly"  # or your preferred interval
     target-branch: "dependabot"
