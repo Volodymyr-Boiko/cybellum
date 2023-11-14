@@ -478,7 +478,7 @@ python-versions = ">=3.8"
 
 [[package]]
 name = "werkzeug"
-version = "3.0.0"
+version = "3.0.1"
 description = "The comprehensive WSGI web application library."
 category = "main"
 optional = false
@@ -505,7 +505,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-ena
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "d8f884ba2fbf72490996168242df985bb4102226efcdee833bd6488fa8cac387"
+content-hash = "aa79fc2e17cfdbc0c28972f707cc69ca562e3060fa59051e10f73b9bb4b35a89"
 
 [metadata.files]
 alembic = []
