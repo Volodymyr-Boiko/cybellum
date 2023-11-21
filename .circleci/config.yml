@@ -1,4 +1,6 @@
 version: 2.1
+#orbs:
+#  sonarcloud: extendaretail/sonarcloud@0.0.2
 jobs:
   build:
     docker:
@@ -12,6 +14,11 @@ jobs:
       SECRET_KEY: "secret_key"
     steps:
       - checkout
+      - run:
+          name: Get Pipeline Id
+          command: |
+            echo "This is pipeline ID << pipeline.id >>"
+            echo "Commit sha << pipeline.trigger_parameters.github_app.commit_sha>>"
       - run:
           name: Install Dependencies
           command: |
@@ -27,6 +34,12 @@ jobs:
             export POSTGRES_PORT=$POSTGRES_PORT
             export SECRET_KEY=$SECRET_KEY
             poetry run pytest
+  install-build-test:
+    docker:
+      - image: cimg/python:3.11.5-node
+    steps:
+      - checkout
+      - sonarcloud/scan
   compliance-check:
     docker:
       - image: python:3.11
@@ -35,12 +48,18 @@ jobs:
           name: Compliance Check
           command: |
             echo "This is pipeline ID << pipeline.id >>"
+            echo ${CIRCLE_BRANCH}
+            echo ${CIRCLE_PULL_REQUESTS}
+            echo ${CIRCLE_PULL_REQUEST}
+            echo "!!!"
 
 workflows:
   build-test:
     jobs:
       - build
       - compliance-check
+#      - install-build-test
+
   compliance:
     jobs:
       - compliance-check

@@ -4,6 +4,8 @@ from app.core.comment import CommentDataCreate, core_create_comment, core_get_co
 
 comment_management = Blueprint("comment_management", __name__)
 
+# test
+
 
 @comment_management.route("/posts/<int:post_id>/comment", methods=["POST"])
 def create_comment(post_id: int):
