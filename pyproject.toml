@@ -7,7 +7,7 @@ authors = ["volodymyr.boiko"]
 [tool.poetry.dependencies]
 python = "^3.8"
 SQLAlchemy = "1.4"
-alembic = "1.5.7"
+alembic = "1.13.1"
 psycopg2 = "^2.9.9"
 pydantic = "^2.4.2"
 pydantic-settings = "^2.0.3"
